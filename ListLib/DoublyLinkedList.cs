@@ -2,7 +2,7 @@
 
 namespace ListLib;
 
-public class DoublyLinkedList<T> : IEnumerable<T>
+public class DoublyLinkedList<T> : IEnumerable<T> where T: IComparable
 {
     internal Node<T>? Head { get; private set; }
     internal Node<T>? Tail { get; private set; }
@@ -44,7 +44,7 @@ public class DoublyLinkedList<T> : IEnumerable<T>
         Node<T> tempel = Head;
         while (element != null)
         {
-            if (tempel.Data == element)
+            if (tempel.Data.CompareTo(element) == 0)
                 return true;
             tempel = tempel.Next;
         }
