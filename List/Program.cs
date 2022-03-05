@@ -29,7 +29,12 @@
                 _LastElement=tempel;
                 ++_Length;
             }
-            
+            public void Clear()
+            {
+                _FirstElement=null;
+                _LastElement=null;
+                _Length=0;
+            }
             
             
         }
