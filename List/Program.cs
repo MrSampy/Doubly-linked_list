@@ -14,6 +14,9 @@
 
         public class DoublyLinkedList<T>
         {
+            private Element<T> _FirstElement, _LastElement;
+            private int _Length = 0;
+            public int _length{get{return _Length;}}
             
             
         }
