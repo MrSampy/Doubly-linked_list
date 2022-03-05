@@ -4,7 +4,7 @@ public sealed class Node<T>
 {
     public Node<T>? Prev { get; set; }
     public Node<T>? Next { get; set; }
-    public T? Data { set; get; }
+    public T? Data { get; set; }
 
     public Node(T data)
     {
