@@ -11,42 +11,65 @@ public class DoublyLinkedList<T> : IEnumerable<T> where T: IComparable
 
     public void Add(T element)
     {
-        Node<T> tempel = new Node<T>(element);
+        var temp = new Node<T>(element);
+
+        // This is a first element, so head & tail is a same element
         if (Head == null)
         {
-            Head = tempel;
-        }
-        else
-        {
-            Tail.Next = tempel;
-            tempel.Prev = Tail;
+            Head = temp;
+            Tail = temp;
         }
 
-        Tail = tempel;
+        Tail!.Next = temp;
+        temp.Prev = Tail;
+        Tail = temp;
+
         ++Length;
     }
     
-    public void AddFirstEl(T element)
+    public void AddFirst(T element)
     {
-        Node<T> tempel = new Node<T>(element);
-        Node<T> newFirstEl = Head;
-        tempel.Next = newFirstEl;
-        Head = tempel;
+        var temp = new Node<T>(element)
+        {
+            Next = Head
+        };
+
+        Head = temp;
+
         if (Length == 0)
+        {
             Tail = Head;
+        }
         else
-            newFirstEl.Prev = tempel;
+        {
+            Tail!.Next = temp;
+        }
+
         ++Length;
     }
 
-    public bool Contains(T element)
+    public bool Contains(T? element)
     {
-        Node<T> tempel = Head;
-        while (element != null)
+        var temp = Head;
+
+        if (temp is null)
         {
-            if (tempel.Data.CompareTo(element) == 0)
+            return false;
+        }
+
+        if (element is null && temp.Data is null)
+        {
+            return true;
+        }
+
+        while (temp?.Next != null)
+        {
+            if (temp.Data?.CompareTo(element) == 0)
+            {
                 return true;
-            tempel = tempel.Next;
+            }
+
+            temp = temp.Next;
         }
 
         return false;
