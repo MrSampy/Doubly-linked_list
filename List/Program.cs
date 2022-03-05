@@ -11,6 +11,12 @@
             public Element<T> _PrevEl { get; set; }
             public Element<T> _NextEl { get; set; }
         }
+
+        public class DoublyLinkedList<T>
+        {
+            
+            
+        }
         
     }
 }   
