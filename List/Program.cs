@@ -47,6 +47,17 @@
                     newFirstEl._PrevEl=tempel;
                 ++_Length;
             }
+            public bool Contains(T element)
+            {
+                Element<T> tempel = _FirstElement;
+                while(element != null)
+                {
+                    if(tempel._Data == element)
+                        return true;
+                    tempel = tempel._NextEl;
+                }
+                return false;
+            }
             
         }
         
