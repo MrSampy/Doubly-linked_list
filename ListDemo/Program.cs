@@ -1,0 +1,1 @@
+﻿Console.WriteLine("This project is a demo for 'ListLib' that contains a custom doubly linked list!");

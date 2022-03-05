@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List", "List\List.csproj", "{2DF53C46-D916-482E-BD0C-53BE9FC696A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListLib", "ListLib\ListLib.csproj", "{CE1FDE04-9ED0-41E0-9A7F-0EF7A2C12EE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListDemo", "ListDemo\ListDemo.csproj", "{1EF8DF65-00C6-4B24-95F8-F9DA9B237D95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2DF53C46-D916-482E-BD0C-53BE9FC696A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2DF53C46-D916-482E-BD0C-53BE9FC696A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2DF53C46-D916-482E-BD0C-53BE9FC696A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2DF53C46-D916-482E-BD0C-53BE9FC696A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1FDE04-9ED0-41E0-9A7F-0EF7A2C12EE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1FDE04-9ED0-41E0-9A7F-0EF7A2C12EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1FDE04-9ED0-41E0-9A7F-0EF7A2C12EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1FDE04-9ED0-41E0-9A7F-0EF7A2C12EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF8DF65-00C6-4B24-95F8-F9DA9B237D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF8DF65-00C6-4B24-95F8-F9DA9B237D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF8DF65-00C6-4B24-95F8-F9DA9B237D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF8DF65-00C6-4B24-95F8-F9DA9B237D95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
