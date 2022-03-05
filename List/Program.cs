@@ -35,7 +35,18 @@
                 _LastElement=null;
                 _Length=0;
             }
-            
+            public void AddFirstEl(T element)
+            {
+                Element<T> tempel = new Element<T>(element);
+                Element<T> newFirstEl = _FirstElement;
+                tempel._NextEl=newFirstEl;
+                _FirstElement=tempel;
+                if(_Length==0)
+                    _LastElement=_FirstElement;
+                else
+                    newFirstEl._PrevEl=tempel;
+                ++_Length;
+            }
             
         }
         
