@@ -17,9 +17,23 @@
             private Element<T> _FirstElement, _LastElement;
             private int _Length = 0;
             public int _length{get{return _Length;}}
+            public void Add(T element)
+            {
+                Element<T> tempel = new Element<T>(element);
+                if (_FirstElement == null)
+                    _FirstElement=tempel;
+                else{
+                    _LastElement._NextEl=tempel;
+                    tempel._PrevEl=_LastElement;
+                }
+                _LastElement=tempel;
+                ++_Length;
+            }
+            
             
             
         }
+        
         
     }
 }   
