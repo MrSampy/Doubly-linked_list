@@ -2,7 +2,7 @@
 
 public class DoublyLinkedList<T>
 {
-    private Element<T> _FirstElement, _LastElement;
+    private Node<T> _firstNode, _lastNode;
     private int _Length = 0;
 
     public int _length
@@ -12,47 +12,47 @@ public class DoublyLinkedList<T>
 
     public void Add(T element)
     {
-        Element<T> tempel = new Element<T>(element);
-        if (_FirstElement == null)
-            _FirstElement = tempel;
+        Node<T> tempel = new Node<T>(element);
+        if (_firstNode == null)
+            _firstNode = tempel;
         else
         {
-            _LastElement._NextEl = tempel;
-            tempel._PrevEl = _LastElement;
+            _lastNode.Next = tempel;
+            tempel.Prev = _lastNode;
         }
 
-        _LastElement = tempel;
+        _lastNode = tempel;
         ++_Length;
     }
 
     public void Clear()
     {
-        _FirstElement = null;
-        _LastElement = null;
+        _firstNode = null;
+        _lastNode = null;
         _Length = 0;
     }
 
     public void AddFirstEl(T element)
     {
-        Element<T> tempel = new Element<T>(element);
-        Element<T> newFirstEl = _FirstElement;
-        tempel._NextEl = newFirstEl;
-        _FirstElement = tempel;
+        Node<T> tempel = new Node<T>(element);
+        Node<T> newFirstEl = _firstNode;
+        tempel.Next = newFirstEl;
+        _firstNode = tempel;
         if (_Length == 0)
-            _LastElement = _FirstElement;
+            _lastNode = _firstNode;
         else
-            newFirstEl._PrevEl = tempel;
+            newFirstEl.Prev = tempel;
         ++_Length;
     }
 
     public bool Contains(T element)
     {
-        Element<T> tempel = _FirstElement;
+        Node<T> tempel = _firstNode;
         while (element != null)
         {
-            if (tempel._Data == element)
+            if (tempel.Data == element)
                 return true;
-            tempel = tempel._NextEl;
+            tempel = tempel.Next;
         }
 
         return false;
