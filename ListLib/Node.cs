@@ -11,10 +11,4 @@ public sealed class Node<T>
         Data = data;
         Prev = Next = null;
     }
-
-    internal void ResetElement()
-    {
-        Data = default;
-        Prev = Next = null;
-    }
 }
