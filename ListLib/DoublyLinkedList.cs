@@ -62,7 +62,7 @@ public class DoublyLinkedList<T> : IEnumerable<T> where T: IComparable
             return true;
         }
 
-        while (temp?.Next != null)
+        do
         {
             if (temp.Data?.CompareTo(element) == 0)
             {
@@ -70,9 +70,9 @@ public class DoublyLinkedList<T> : IEnumerable<T> where T: IComparable
             }
 
             temp = temp.Next;
-        }
+        } while (temp?.Next != null);
 
-        return false;
+        return temp!.Data?.CompareTo(element) == 0;
     }
     
     public void Clear()
