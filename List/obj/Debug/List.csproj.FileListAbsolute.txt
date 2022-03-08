@@ -1,7 +1,0 @@
-E:\Projects\NewWork\List\Doubly-linked_list\List\bin\Debug\List.exe
-E:\Projects\NewWork\List\Doubly-linked_list\List\bin\Debug\List.pdb
-E:\Projects\NewWork\List\Doubly-linked_list\List\obj\Debug\List.csproj.AssemblyReference.cache
-E:\Projects\NewWork\List\Doubly-linked_list\List\obj\Debug\List.csproj.SuggestedBindingRedirects.cache
-E:\Projects\NewWork\List\Doubly-linked_list\List\obj\Debug\List.csproj.CoreCompileInputs.cache
-E:\Projects\NewWork\List\Doubly-linked_list\List\obj\Debug\List.exe
-E:\Projects\NewWork\List\Doubly-linked_list\List\obj\Debug\List.pdb
