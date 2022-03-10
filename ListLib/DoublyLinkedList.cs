@@ -2,7 +2,7 @@
 
 namespace ListLib;
 
-public class DoublyLinkedList<T> : IEnumerable<T> where T: IComparable
+public class DoublyLinkedList<T> : ICollection<T> where T: IComparable
 {
     internal Node<T>? Head { get; private set; }
     internal Node<T>? Tail { get; private set; }
@@ -74,7 +74,20 @@ public class DoublyLinkedList<T> : IEnumerable<T> where T: IComparable
 
         return temp!.Data?.CompareTo(element) == 0;
     }
-    
+
+    public void CopyTo(T[] array, int arrayIndex)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Remove(T item)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Count { get; }
+    public bool IsReadOnly { get; }
+
     public void Clear()
     {
         Head = null;
