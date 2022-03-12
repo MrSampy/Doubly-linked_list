@@ -16,7 +16,7 @@ foreach (var el in lst)
 
 Console.WriteLine("List contains 4: " + lst.Contains(4));
 
-Console.WriteLine("Actual list size: " + lst.Length);
+Console.WriteLine("Actual list size: " + lst.Count);
 lst.Clear();
 Console.WriteLine("List cleared!");
-Console.WriteLine("Actual list size: " + lst.Length);
+Console.WriteLine("Actual list size: " + lst.Count);

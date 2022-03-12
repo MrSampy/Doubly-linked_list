@@ -97,6 +97,6 @@ public class DlsTests
 
         dls.Clear();
         
-        Assert.Equal(0, dls.Length);
+        Assert.Equal(0, dls.Count);
     }
 }

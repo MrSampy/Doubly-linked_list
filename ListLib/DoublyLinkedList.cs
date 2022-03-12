@@ -7,7 +7,8 @@ public class DoublyLinkedList<T> : ICollection<T> where T: IComparable
     internal Node<T>? Head { get; private set; }
     internal Node<T>? Tail { get; private set; }
 
-    public int Length { get; private set; }
+    public int Count { get; private set; }
+    public bool IsReadOnly {get { return false; }}
 
     public void Add(T element)
     {
@@ -24,7 +25,7 @@ public class DoublyLinkedList<T> : ICollection<T> where T: IComparable
         temp.Prev = Tail;
         Tail = temp;
 
-        ++Length;
+        ++Count;
     }
     
     public void AddFirst(T element)
@@ -36,7 +37,7 @@ public class DoublyLinkedList<T> : ICollection<T> where T: IComparable
 
         Head = temp;
 
-        if (Length == 0)
+        if (Count == 0)
         {
             Tail = Head;
         }
@@ -45,7 +46,7 @@ public class DoublyLinkedList<T> : ICollection<T> where T: IComparable
             Tail!.Next = temp;
         }
 
-        ++Length;
+        ++Count;
     }
 
     public bool Contains(T? element)
@@ -75,24 +76,58 @@ public class DoublyLinkedList<T> : ICollection<T> where T: IComparable
         return temp!.Data?.CompareTo(element) == 0;
     }
 
-    public void CopyTo(T[] array, int arrayIndex)
-    {
-        throw new NotImplementedException();
+    public void CopyTo(T?[] array, int arrayIndex)
+    {      
+        if(arrayIndex >= array.Length)
+            return;
+        var temp = Head;
+
+        do
+        {
+            array[arrayIndex] = temp.Data;
+            ++arrayIndex;
+            temp = temp.Next;
+        } while (temp?.Next != null || arrayIndex >= array.Length);
+        
+        
     }
 
-    public bool Remove(T item)
+    public bool Remove(T? item)
     {
-        throw new NotImplementedException();
+        if (!Contains(item))
+            return false;
+        var nodetoremove = GetNode(item);
+        var nextnode = nodetoremove.Next;
+        var prevnode = nodetoremove.Prev;
+        if (nextnode != null)
+        {
+            nextnode.Prev = prevnode;
+        }
+        if (prevnode != null)
+        {
+            prevnode.Next = nextnode;
+        }
+        return true;
     }
-
-    public int Count { get; }
-    public bool IsReadOnly { get; }
 
     public void Clear()
     {
         Head = null;
         Tail = null;
-        Length = 0;
+        Count = 0;
+    }
+    public Node<T>? GetNode(T? item)
+    {
+        if (Head == null || item ==null)
+            return null;
+        var temp = Head;
+        do
+        {
+            if (temp.Data?.CompareTo(item) == 0) 
+                break;
+            temp = temp.Next;
+        } while (temp?.Next != null);
+         return temp;
     }
 
     public IEnumerator<T> GetEnumerator()
@@ -130,7 +165,7 @@ public class DoublyLinkedList<T> : ICollection<T> where T: IComparable
         public bool MoveNext()
         {
             if (_currentNode == null) {
-                _index = _list.Length + 1;
+                _index = _list.Count + 1;
                 return false;
             }
 
@@ -150,7 +185,7 @@ public class DoublyLinkedList<T> : ICollection<T> where T: IComparable
             _currentNode = _list.Head;
             Current = default;
         }
-
+        
         public void Dispose()
         {
         }
